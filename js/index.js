@@ -17,7 +17,6 @@ function operPressed(ev) {
 }
 
 document.querySelector('.equal').addEventListener('click', equalPressed);
-
 function equalPressed () {
     display.value = eval(display.value);
 }
