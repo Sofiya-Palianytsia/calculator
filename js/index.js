@@ -9,25 +9,22 @@ function digitPressed(ev) {
 
 document
     .querySelectorAll('.opers button')
-    .forEach(oper => oper.addEventListener('click', operPressed));
+    .forEach(oper => oper.addEventListener('click', operPressed,));
 function operPressed(ev) {
     display.value += ev.target.innerText;
 }
 
+
 document.querySelector('.equal').addEventListener('click', equalPressed);
 function equalPressed () {
     display.value = eval(display.value);
+    if (display.value === "Infinity") {
+        alert('You can\'t divide by zero!');
+        clearPressed();
+    }
 }
 
 document.querySelector('.clear').addEventListener('click', clearPressed);
-function clearPressed (ev) {
+function clearPressed () {
    display.value = '';
 }
-
-/*else if (btnText === 'CE') { // delete one character
-            input = input.slice(0, input.length - 1);*/
-
-/*if (input.indexOf('.') === -1 || dotFlag) { // only one dot is allowed
-                input += '.';
-                dotFlag = false;
-            }*/
